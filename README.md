@@ -1,131 +1,50 @@
+# 🏭 Air Quality Prediction
+
+This project explores and predicts air pollution trends in India using historical air quality data from the Indian Ministry of Environment and Pollution Control Board. Given India's high exposure to air pollution and its impact on public health, this work aims to analyze trends and build models for forecasting key pollutants.
+
+## 📦 Dataset Overview
+
+The dataset combines several years of records across Indian states and cities, tracking pollutants such as:
+
+- RSPM (Respirable Suspended Particulate Matter)
+- SO₂ (Sulphur Dioxide)
+- NO₂ (Nitrogen Dioxide)
+
+### 🔍 Key Questions Explored
+
+- How has air quality changed over time in major Indian cities?
+- Which states or cities show the highest average pollution levels?
+- Are there seasonal trends in pollution?
+- Can we relate pollution reduction to specific policy changes?
+- How accurately can we predict RSPM levels using machine learning models?
+
+---
+
+## 📈 Suggested Visualizations
+
+- 📉 **Line Plot**: Trend of average RSPM levels over the years.
+- 🌡 **Heatmap**: Monthly pollutant levels across states.
+- 🏙 **Bar Chart**: Top 10 most polluted cities.
+- 📦 **Boxplot**: Seasonal distribution of RSPM levels.
+- 🔄 **Trend Comparison**: Before vs. after major policy implementation.
+
+Tools used: `matplotlib`, `seaborn`, `plotly`
+
+---
+
+## 🧠 Machine Learning Approach
+
+We applied several regression models to predict RSPM levels:
+
+- **Linear Regression**
+- **Random Forest Regressor**
+- **Gradient Boosting Regressor**
+
+### ✅ Evaluation Metrics
+
+- **Mean Absolute Error (MAE)**: Average magnitude of errors (lower is better).
+- **Mean Squared Error (MSE)**: Penalizes larger errors more.
+- **R² Score**: Measures the proportion of variance explained by the model.
 
 
 
-# Workflows
-1. Update config.yaml
-2. Update params.yaml
-3. Update entity
-4. Update the configuration manager in src config
-5. update the conponents
-6. update the pipeline
-7. update the main.py
-8. update the app.py
-
-
-# How to run?
-### STEPS:
-
-Clone the repository
-
-```bash
-https://github.com/Mansoureh-Aghabeig/Text-Summarizing
-```
-### STEP 01- Create a conda environment after opening the repository
-
-```bash
-conda create -n summary python=3.8 -y
-```
-
-```bash
-conda activate summary
-```
-
-
-### STEP 02- install the requirements
-```bash
-pip install -r requirements.txt
-```
-
-
-```bash
-# Finally run the following command
-python app.py
-```
-
-Now,
-```bash
-open up you local host and port
-```
-
-
-```bash
-Author: Mansoureh Aghabeig
-Data Scientist
-Email: mans.aghabeig@gmail.com
-
-```
-
-
-
-# AWS-CICD-Deployment-with-Github-Actions
-
-## 1. Login to AWS console.
-
-## 2. Create IAM user for deployment
-
-	#with specific access
-
-	1. EC2 access : It is virtual machine
-
-	2. ECR: Elastic Container registry to save your docker image in aws
-
-
-	#Description: About the deployment
-
-	1. Build docker image of the source code
-
-	2. Push your docker image to ECR
-
-	3. Launch Your EC2 
-
-	4. Pull Your image from ECR in EC2
-
-	5. Lauch your docker image in EC2
-
-	#Policy:
-
-	1. AmazonEC2ContainerRegistryFullAccess
-
-	2. AmazonEC2FullAccess
-
-	
-## 3. Create ECR repo to store/save docker image
-    - Save the URI: 623932780522.dkr.ecr.us-east-2.amazonaws.com/text-s
-
-	
-## 4. Create EC2 machine (Ubuntu) 
-
-## 5. Open EC2 and Install docker in EC2 Machine:
-	
-	
-	#optinal
-
-	sudo apt-get update -y
-
-	sudo apt-get upgrade
-	
-	#required
-
-	curl -fsSL https://get.docker.com -o get-docker.sh
-
-	sudo sh get-docker.sh
-
-	sudo usermod -aG docker ubuntu
-
-	newgrp docker
-	
-# 6. Configure EC2 as self-hosted runner:
-    setting>actions>runner>new self hosted runner> choose os> then run command one by one
-
-
-# 7. Setup github secrets:
-
-    AWS_ACCESS_KEY_ID=
-
-    AWS_SECRET_ACCESS_KEY=
-
-    AWS_REGION = us-east-1
-
-    AWS_ECR_LOGIN_URI = demo>>  566373416292.dkr.ecr.ap-south-1.amazonaws.com
-
-    ECR_REPOSITORY_NAME = simple-app
